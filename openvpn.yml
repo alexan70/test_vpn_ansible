@@ -4,3 +4,8 @@
 
   roles:
     - Stouts.openvpn
+  vars:
+    openvpn_clients:
+      - test1
+      - test3
+      - test4
