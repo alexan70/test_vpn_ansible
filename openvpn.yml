@@ -9,3 +9,19 @@
       - test1
       - test3
       - test4
+
+  tasks:
+    - name: Send e-mail to a bunch of users, attaching files
+      mail:
+        host: smtp.gmail.com
+        port: 465
+        secure: always
+        username: user@example.com
+        password: 123456
+        from: user@example.com
+        subject: openvpn config
+        to: reciever@gmail.com
+        body: Hello , this is your openVPN configuration file. I hope you like it ;-)
+        attach: /etc/openvpn/keys/test1.zip
+        charset: us-ascii
+
