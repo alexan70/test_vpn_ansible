@@ -4,23 +4,25 @@
 
   roles:
     - Stouts.openvpn
+  #vars_files:
+  #  - vars/user.yml
   vars:
     openvpn_clients:
       - test1
-      - test3
       - test4
-
+    openvpn_clients_revoke:
+      - test3 
   tasks:
     - name: Send e-mail to a bunch of users, attaching files
       mail:
-        host: smtp.gmail.com
-        port: 465
-        secure: always
-        username: user@example.com
-        password: 123456
-        from: user@example.com
+        host: aspmx.l.google.com
+        port: 25
+        #secure: never
+        #username: user@example.com
+        #password: 123456
+        from: admin_ansible_test@example.com
         subject: openvpn config
-        to: reciever@gmail.com
+        to: test119@example.com
         body: Hello , this is your openVPN configuration file. I hope you like it ;-)
         attach: /etc/openvpn/keys/test1.zip
         charset: us-ascii
