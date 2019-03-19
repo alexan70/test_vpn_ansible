@@ -9,7 +9,7 @@
   vars:
     openvpn_clients:
       - test1
-      - test4
+      - test2
     openvpn_clients_revoke:
       - test3 
   tasks:
